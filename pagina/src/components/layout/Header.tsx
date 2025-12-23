@@ -1,7 +1,7 @@
 import { TopBar } from "./TopBar";
 import { MainNav } from "./MainNav";
 import { InfoBar } from "./InfoBar";
-import { BarEnd } from "./BarEnd";
+//import { BarEnd } from "./BarEnd";
 
 export function Header() {
   return (
@@ -9,7 +9,7 @@ export function Header() {
       <TopBar />
       <InfoBar />
       <MainNav />
-      <BarEnd />
+      
     </header>
   );
 }

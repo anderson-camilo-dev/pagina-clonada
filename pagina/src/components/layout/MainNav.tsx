@@ -1,34 +1,51 @@
 import { Container } from "@/ui/Container";
 import image from "next/image";
 import { global } from "styled-jsx/css";
+import Link from "next/link";
+
 
 export function MainNav() {
+
+  
   return (
-    <nav className="border-b bg-white">
+    <nav className=" bg-white">
       <Container>
         <div className="flex h-16  items-center justify-between">
+          <Link href="/">
           <img
             src="https://store.bigme.vip/cdn/shop/files/8cf163d1-4537-4a04-89db-5a354edabfd1.png?v=1733881864&width=120"
             alt="Logo"
             width={120}
             height={40}
           />
+          </Link>
 
           <div className=" meu-texto texto-hover flex items-center text-xl gap-19">
-            <h1 className="text-black hover:text-red-500 transition-colors duration-300">
-              Loja
+            <h1 className="text-black hover:text-red-500 transition-colors  duration-300">
+              <Link href="/shop">
+              Loja 
+             </Link>
             </h1>
+
             <h1 className="text-black hover:text-red-500 transition-colors duration-300">
+              <Link href="/product">
               Produtos
+              </Link>
             </h1>
             <h1 className="text-black hover:text-red-500 transition-colors duration-300">
+              <Link href="BlackFraud">
               black Fraud
+              </Link>
             </h1>
             <h1 className="text-black hover:text-red-500 transition-colors duration-300">
+              <Link href="/support">
               Apoio
+              </Link>
             </h1>
             <h1 className="text-black hover:text-red-500 transition-colors duration-300">
+              <Link href="/about">
               Quem Somos
+              </Link>
             </h1>
           </div>
           <div className=" gap-4 flex items-center"> 
