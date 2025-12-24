@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-
+import PriceHover from "@/components/PriceHover";
+import Tooltip from "@/components/TooltipLinks";
 
 interface ProductPageProps {
   params: Promise<{ id: string }>;
@@ -27,33 +28,61 @@ export default async function ProductPage({ params }: ProductPageProps) {
   };
 
   return (
-    <>
-      
-      {/*   CARD DE PRODUTO*/}
-      <div className="min-h-screen mt-35 bg-white/90 p-3 pt-32">
-        <div className="mx-auto max-w-5xl">
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-gray-200">
+    <main className="flex  flex-col  bg-white min-h-screen">
+      <div>
+        <div className="flex mx-auto max-w-6xl">
+          <h1 className="my-4  text-xs  text-neutral-400">
+            <b className="text-black/80"> Home</b> → {product.name}{" "}
+          </h1>
+        </div>
+      </div>
+
+      <div className="flex mx-auto max-w-6xl w-full ">
+        <div className="grid grid-cols-5 my-10 gap-2">
+          <div className="col-span-3">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+          <div className="col-span-2 columns-1">
+            <h1 className="text-4xl font-bold text-gray-900">{product.name}</h1>
+            <div className="flex flex-row ">
               <img
-                src={product.image}
-                alt={product.name}
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                className="h-7 "
+                src="https://media.istockphoto.com/id/495602140/pt/vetorial/cinco-estrelas-de-ouro.jpg?s=612x612&w=0&k=20&c=KtiotL3hF1IWe2ykn05dyZLn80mrEmbjfNGLgaIKsEQ="
+                alt=" estrelas"
+              />
+              <p className="font-light hover:underline text-xm cursor-pointer text text-black/60">
+                avaliações
+              </p>
+            </div>
+            <div className="flex flex-row">
+              <div className="text-red-500 font-bold text-2xl ">
+                <h1 className="p-1">
+                  Preço: <PriceHover usdPrice={product.price} />
+                </h1>
+              </div>
+
+              <div className="flex bg-orange-600 mt-2 font-bold rounded-sm items-center h-6  max-w-xl ">
+                <h1 className="p-2">desconto %</h1>
+              </div>
+            </div>
+            <div>
+              <img
+                className="rounded-t-lg"
+                src="https://store.bigme.vip/cdn/shop/files/01-B6.png?v=1763802474"
+                alt="black fralde"
               />
             </div>
-
-            <div className="flex flex-col justify-center space-y-4">
-              <h1 className="text-3xl font-bold text-gray-900">
-                {product.name}
-              </h1>
-              <p className="text-gray-600">{product.description}</p>
-              <p className="text-2xl font-bold text-gray-900">
-                {formatPrice(product.price)}
-              </p>
+            <div className="text-black/60 font-bold my-2">
+              <p>Esteja à frente com as promoções da Black Friday.</p>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </main>
   );
 }

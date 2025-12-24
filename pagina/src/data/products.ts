@@ -110,7 +110,7 @@ export const products: Product[] = [
     image:
       "https://store.bigme.vip/cdn/shop/products/b251-worlds-1st-all-in-one-pc-with-e-ink-color-display-266418.jpg?v=1706729393&width=800",
     category: "Acessórios",
-    inStock: false,
+    inStock: true,
   },
   {
     id: "11",
