@@ -28,7 +28,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   };
 
   return (
-    <main className="flex  flex-col  bg-white min-h-screen">
+    <main className="flex  flex-col   bg-white min-h-screen">
       <div>
         <div className="flex mx-auto max-w-6xl">
           <h1 className="my-4  text-xs  text-neutral-400">
@@ -37,8 +37,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
       </div>
 
-      <div className="flex mx-auto max-w-6xl w-full ">
-        <div className="grid grid-cols-5 my-10 gap-2">
+      <div className="flex p-4 mx-auto max-w-7xl w-full ">
+        <div className="flex grid grid-cols-5 my-10 gap-2">
           <div className="col-span-3">
             <img
               src={product.image}
@@ -48,8 +48,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
             />
           </div>
           <div className="col-span-2 columns-1">
-            <h1 className="text-4xl font-bold text-gray-900">{product.name}</h1>
-            <div className="flex flex-row ">
+            <h1 className="text-4xl font-semibold text-gray-900">
+              {product.name}
+            </h1>
+            <div className=" my-3 flex flex-row ">
               <img
                 className="h-7 "
                 src="https://media.istockphoto.com/id/495602140/pt/vetorial/cinco-estrelas-de-ouro.jpg?s=612x612&w=0&k=20&c=KtiotL3hF1IWe2ykn05dyZLn80mrEmbjfNGLgaIKsEQ="
@@ -59,14 +61,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 avaliações
               </p>
             </div>
-            <div className="flex flex-row">
+            <div className="flex my-3 flex-row">
               <div className="text-red-500 font-bold text-2xl ">
                 <h1 className="p-1">
                   Preço: <PriceHover usdPrice={product.price} />
                 </h1>
               </div>
 
-              <div className="flex bg-orange-600 mt-2 font-bold rounded-sm items-center h-6  max-w-xl ">
+              <div className="flex bg-orange-600 mt-2 mx-2 font-bold rounded-sm items-center h-6  max-w-xl ">
                 <h1 className="p-2">desconto %</h1>
               </div>
             </div>
@@ -77,8 +79,36 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 alt="black fralde"
               />
             </div>
-            <div className="text-black/60 font-bold my-2">
+            <div className="text-black/60 my-5 font-bold ">
               <p>Esteja à frente com as promoções da Black Friday.</p>
+            </div>
+            <div className=" cursor-pointer ">
+              <div className="flex text-3xl font-extrabold rounded-lg bg-black/50 px-28 py-4 text-white transition-colors hover:bg-black disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-600">
+                <span className="hidden sm:inline items-center">
+                  Comprar Agora
+                </span>
+              </div>
+              <div className="flex mt-6 text-2xl font-extrabold rounded-lg bg-black/50 px-27 py-2 text-white transition-colors hover:bg-black disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-600">
+                <span className="hidden sm:inline items-center">
+                  Adicionar ao Carrinho
+                </span>
+<div className="mt-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-10"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>

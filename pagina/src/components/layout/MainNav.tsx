@@ -20,14 +20,15 @@ export function MainNav() {
 
           <div className=" meu-texto texto-hover flex items-center text-xl gap-19">
             <h1 className="text-black hover:text-red-500 transition-colors  duration-300">
-              <TooltipLinks
-          word="Loja"
+            <Link href="/shop">  <TooltipLinks
+          word= "Loja"
           links={[
             { label: "Bigme Euro Shop", href: "/shop/euro" },
             { label: "Loja Bigme E-reader", href: "/shop/store" },
            
           ]}
         />
+        </Link>
             </h1>
 
             <h1 className="text-black hover:text-red-500 transition-colors duration-300">

@@ -59,9 +59,7 @@ const [isHovered, setIsHovered] = useState(false);
           </h3>
         </Link>
 
-        <p className="mb-4 flex-1 text-sm text-black line-clamp-2">
-          {product.description}
-        </p>
+        
         <div>
           <div 
             onMouseEnter={() => setIsHovered(true)}

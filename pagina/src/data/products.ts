@@ -103,10 +103,10 @@ export const products: Product[] = [
   },
   {
     id: "10",
-    name: "",
+    name: "Bigme B251--World's 1st All-in-one PC and monitor with E Ink Color Display",
     description:
-      "Bigme B251--World's 1st All-in-one PC and monitor with E Ink Color Display",
-    price: 1.499,
+      "",
+    price: 1499.0,
     image:
       "https://store.bigme.vip/cdn/shop/products/b251-worlds-1st-all-in-one-pc-with-e-ink-color-display-266418.jpg?v=1706729393&width=800",
     category: "Acessórios",
@@ -125,7 +125,7 @@ export const products: Product[] = [
   },
   {
     id: "12",
-    name: "https://store.bigme.vip/cdn/shop/files/01_1.png?v=1764324665&width=800",
+    name: "Bigme B7 PRO powerful color epaper Phone-Tablet 8+256GB with Android 14OS and 4G calling",
     description:
       "Teclado mecânico RGB com switches Cherry MX e design ergonômico.",
     price: 249.0,
