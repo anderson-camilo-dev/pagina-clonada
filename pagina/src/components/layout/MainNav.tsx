@@ -32,7 +32,7 @@ export function MainNav() {
             </h1>
 
             <h1 className="text-black hover:text-red-500 transition-colors duration-300">
-              <Link href="/product">Produtos</Link>
+              <Link href="/shop">Produtos</Link>
             </h1>
             <h1 className="text-black hover:text-red-500 transition-colors duration-300">
               <Link href="/black">black Fralde</Link>
