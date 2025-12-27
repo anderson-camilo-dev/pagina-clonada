@@ -72,7 +72,7 @@ export default function ImageCarousel() {
           </div>
         ))}
       </Slider>
-      <ShopPage/>
+      
     </div>
     
   );

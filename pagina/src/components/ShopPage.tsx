@@ -1,53 +1,26 @@
+"use client"
 import Link from "next/link";
-
+import ProductCard from "./ProductCard";
+import ProductById from "./ProductById";
+import VideoCarousel3D from "./VideoCarousel3D";
 
 export default function ShopPage() {
   return (
-    <main>
-      
-
-      {/* Seção de categorias */}
-      <section className="max-w-7xl mx-auto mt-20 flex gap-10">
-        
-        {/* COLOR E-INK */}
-        <Link href="/" className="flex-1">
-          <div className="relative group">
-            <h1 className="text-black/80 font-extrabold top-10 absolute text-2xl mb-4">
-              COLOR E-INK TABLETS
-            </h1>
-
-            <img
-              src="https://euroshop.bigme.vip/cdn/shop/files/009b2108078ae5ef402cd6888c5dd9a_600x_crop_center.jpg?v=1721187926"
-              alt="Color E-Ink"
-              className="w-full h-full object-cover rounded"
-            />
-
-            <button className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100  text-black/80 bg-white px-4 py-2 rounded-full shadow hover:bg-black hover:text-white">
-              Compre agora
-            </button>
-          </div>
-        </Link>
-
-        {/* B/W E-INK */}
-        <Link href="/" className="flex-1">
-          <div className="relative group">
-            <h1 className="text-black/80 font-extrabold top-10 absolute text-2xl mb-4">
-              B/W E-INK TABLETS
-            </h1>
-
-            <img
-              src="https://euroshop.bigme.vip/cdn/shop/files/1_600x_crop_center.jpg?v=1721188022"
-              alt="B/W E-Ink"
-              className="w-full h-full object-cover rounded"
-            />
-
-            <button className="absolute bottom-4 left-4 opacity-0  group-hover:opacity-100 transition text-black/80 bg-white px-4 py-2 rounded-full shadow hover:bg-black hover:text-white">
-              Compre agora
-            </button>
-          </div>
-        </Link>
-
-      </section>
+    <main className="w-full bg-white  ">
+      <div className="max-w-7xl grid grid-cols-2 mx-auto pt-10 pb-5">
+        <div><h1 className="text-3xl text-start font-bold text-black/70 ">Produtos em destaque</h1></div>
+     < Link href="/shop">
+        <div><h1 className="text-end text-black/70">Ver mais...</h1></div></Link>
+      </div>
+    <div className="max-w-7xl gap-2  mx-auto  grid grid-cols-4 ">
+      <div><ProductById id={1} /></div>
+      <div><ProductById id={2} /></div>
+      <div><ProductById id={3} /></div>
+      <div><ProductById id={4} /></div>
+    </div>
+   <div className="w-full ">
+<VideoCarousel3D/>
+   </div>
     </main>
   );
 }
