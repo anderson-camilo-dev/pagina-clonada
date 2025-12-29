@@ -7,7 +7,7 @@ export default function ApoioCard(){
 <div className="rounded-2xl  bg-gray-800">
   
 <img className="mx-auto rounded-full pt-5"
-  src="/icons/caminhao.gif"
+  src="/icone/caminhao.gif"
   alt=""
   width={120}
   height={120}
@@ -20,7 +20,7 @@ export default function ApoioCard(){
 </div>
 <div className="rounded-2xl bg-gray-800">
 <img className="mx-auto rounded-full pt-5"
-  src="/icons/presente.gif"
+  src="/icone/presente.gif"
   alt=""
   width={120}
   height={120}
@@ -34,7 +34,7 @@ export default function ApoioCard(){
 </div>
 <div className="rounded-2xl bg-gray-800">
 <img className="mx-auto rounded-full pt-5"
-  src="/icons/seta.gif"
+  src="/icone/seta.gif"
   alt=""
   width={120}
   height={120}
@@ -47,7 +47,7 @@ export default function ApoioCard(){
 </div>
 <div className="rounded-2xl bg-gray-800">
 <img className="mx-auto rounded-full pt-5"
-  src="/icons/16-number.gif"
+  src="/icone/16-number.gif"
   alt=""
   width={120}
   height={120}
