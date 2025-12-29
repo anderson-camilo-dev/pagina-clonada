@@ -2,13 +2,11 @@
 
 export default function RedeShop() {
   return (
-    <main className="max-w-7xl mx-auto ">
-      <div className="items-center pt-30 ">
-        <h1 className="max-w-7xl text-black/80 text-4xl font-extrabold text-center pb-10 mx-auto">
-          Por que escolher a Bigme?
-        </h1>
-      </div>
-      <div className="grid grid-cols-2 max-w-7xl mx-auto gap-2">
+    <main className="max-w-7xl pt-30 mx-auto ">
+     <div className="max-w-7xl mx-auto pt-10">
+    <h1 className="text-5xl text-black/80 font-bold">Bigme nas redes sociais</h1>
+  </div>
+      <div className="grid grid-cols-2 pt-5  mx-auto ">
         <div className="">
           <iframe
             width="560"
@@ -18,10 +16,10 @@ export default function RedeShop() {
           ></iframe>
         </div>
         <div className="max-w-3xl  ">
-          <h1 className="font-bold text-4xl text-center pt-10 text-black/80">
+          <h1 className="font-semibold text-4xl text-start pt-10 text-black/80">
             Bigme na IFA 2024
           </h1>
-          <p className="text-black/80 font-semibold pt-10 text-start text-2xl">
+          <p className="text-black/80 font-semibold pt-10 text-start text-xl">
             Bigme fez uma grande aparição na IFA 2024 em Berlim, Alemanha,
             apresentando uma variedade de produtos inovadores que cativaram
             tanto os usuários quanto a mídia. Isto aumentou significativamente o
@@ -31,18 +29,18 @@ export default function RedeShop() {
       </div>
       <div className="grid grid-cols-2 max-w-7xl pt-30 mx-auto gap-2">
         {" "}
-        <div className="max-w-3xl ">
-          <h1 className="font-bold text-4xl text-center pt-10 text-black/80">
+        <div className="max-w-3xl mr-20">
+          <h1 className="font-semibold text-4xl text-end pt-10 text-black/80">
             Bigme na IFA 2024
           </h1>
-          <p className="text-black/80 font-semibold pt-10 text-start text-2xl">
+          <p className="text-black/80 font-semibold pt-10 text-end text-xl">
             Bigme fez uma grande aparição na IFA 2024 em Berlim, Alemanha,
             apresentando uma variedade de produtos inovadores que cativaram
             tanto os usuários quanto a mídia. Isto aumentou significativamente o
             reconhecimento da Bigme na Europa.
           </p>
         </div>
-        <div className="">
+        <div className="flex justify-items-end">
           <iframe
             width="560"
             height="315"

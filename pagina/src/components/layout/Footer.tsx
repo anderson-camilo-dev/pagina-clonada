@@ -2,8 +2,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
+     <div className="pt-40 bg-white">
     <>
-     
+    
 
    
       <footer className="bg-gray-500 text-gray-300   px-8 py-15 text-center  ">
@@ -25,5 +26,6 @@ export default function Footer() {
         </a>
       </footer>
     </>
+    </div>
   );
 }

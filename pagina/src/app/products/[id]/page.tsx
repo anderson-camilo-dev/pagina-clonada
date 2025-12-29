@@ -83,31 +83,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <p>Esteja à frente com as promoções da Black Friday.</p>
             </div>
             <div className=" cursor-pointer ">
-              <div className="flex text-3xl font-extrabold rounded-lg bg-black/50 px-28 py-4 text-white transition-colors hover:bg-black disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-600">
+              <div className="flex text-3xl font-extrabold rounded-lg bg-blue-500 px-28 py-4 text-white transition-colors hover:bg-black disabled:cursor-not-allowed
+               disabled:opacity-50 disabled:hover:bg-blue-600">
                 <span className="hidden sm:inline items-center">
                   Comprar Agora
                 </span>
               </div>
-              <div className="flex mt-6 text-2xl font-extrabold rounded-lg bg-black/50 px-27 py-2 text-white transition-colors hover:bg-black disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-600">
-                <span className="hidden sm:inline items-center">
+              <div className="flex mt-5 text-xl  font-extrabold rounded-lg  align-middle bg-black/30 px-27 py-5 text-white transition-colors hover:bg-black
+               disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-600">
+                <span className="hidden sm:inline mx-auto">
                   Adicionar ao Carrinho
                 </span>
-<div className="mt-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-                </div>
+                <div className="mt-4"></div>
               </div>
             </div>
           </div>

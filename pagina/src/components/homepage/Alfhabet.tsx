@@ -19,13 +19,13 @@ export function Alfhabet({ onChangeOrder }: Props) {
   }
 
   return (
-    <div className="w-full py-2 ">
-      <div className="w-full mx-auto flex justify-end max-w-7xl pt-10">
+    <div>
+      <div className=" mx-auto flex  w-70 ">
         <div className="relative ">
           {/* BOTÃO */}
           <button
             onClick={() => setOpen(!open)}
-            className="p-2 px-4 flex items-center gap-2 border border-black/50 cursor-pointer bg-white rounded-full font-medium text-black"
+            className="p-2  flex items-center  border border-black/50 cursor-pointer bg-white rounded-full font-medium text-black"
           >
             {selected === "az" && "Alfabeticamente, de A a Z"}
             {selected === "za" && "Alfabeticamente, de Z a A"}

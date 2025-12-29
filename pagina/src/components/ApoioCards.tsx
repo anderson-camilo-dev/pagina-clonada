@@ -58,9 +58,7 @@ export default function ApoioCard(){
 <p className="text-xl text-gray-300 text-center pt-2 mx-3 font-semibold">Garantimos a qualidade dos produtos e a pontualidade das atualizações de software...</p>
 </div>
    </div>
-  <div className="max-w-7xl mx-auto pt-10">
-    <h1 className="text-4xl text-black/80 font-bold">Bigme nas redes sociais</h1>
-  </div>
+  
   </main>
     )
 

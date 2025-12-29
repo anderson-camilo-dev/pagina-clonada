@@ -7,14 +7,12 @@ import { BarEnd } from "@/components/layout/BarEnd";
 import Footer from "@/components/layout/Footer";
 import ProductCard from "@/components/ProductCard";
 import Categories from "@/components/homepage/Categories";
+import SearchBar from "@/components/SearchBar";// <-- importando
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [order, setOrder] = useState<
-  "az" | "za" | "price-asc" | "price-desc"
->("az");
-
-
+  const [order, setOrder] = useState<"az" | "za" | "price-asc" | "price-desc">("az");
+  const [searchTerm, setSearchTerm] = useState(""); // <--- estado da busca
 
   useEffect(() => {
     async function getProducts() {
@@ -26,37 +24,35 @@ export default function Home() {
     getProducts();
   }, []);
 
-  const orderedProducts = [...products].sort((a, b) => {
-  switch (order) {
-    case "az":
-      return a.name.localeCompare(b.name);
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-    case "za":
-      return b.name.localeCompare(a.name);
-
-    case "price-asc":
-      return a.price - b.price;
-
-    case "price-desc":
-      return b.price - a.price;
-
-    default:
-      return 0;
-  }
-});
-
-
-  
+  const orderedProducts = [...filteredProducts].sort((a, b) => {
+    switch (order) {
+      case "az":
+        return a.name.localeCompare(b.name);
+      case "za":
+        return b.name.localeCompare(a.name);
+      case "price-asc":
+        return a.price - b.price;
+      case "price-desc":
+        return b.price - a.price;
+      default:
+        return 0;
+    }
+  });
 
   return (
     <main className="min-h-screen bg-white/98 py-2">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl  mx-auto">
         <div className="pt-2.5">
           <BarEnd />
         </div>
 
-        <div className="pb-8">
-          <Alfhabet onChangeOrder={setOrder} />
+        <div className=" max-w-7xl grid grid-cols-10 ">
+          <div className="col-span-2 col-end-6 items-end"><SearchBar  searchTerm={searchTerm} setSearchTerm={setSearchTerm} /></div> {/* <-- usando */}
+         <div className="col-span-1  col-end-10"><Alfhabet onChangeOrder={setOrder} /></div> 
         </div>
 
         <div className="grid grid-cols-4 gap-2">

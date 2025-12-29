@@ -56,7 +56,7 @@ export default function VideoCarouselDepth() {
     <div className="relative w-full max-w-4xl mx-auto py-12">
       <button
         onClick={prev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/60 text-white w-10 h-10 rounded-full"
+        className="absolute left-0 top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-black/60 text-white w-10 h-10 rounded-full"
       >
         ‹
       </button>
@@ -102,7 +102,7 @@ export default function VideoCarouselDepth() {
 
       <button
         onClick={next}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/60 text-white w-10 h-10 rounded-full"
+        className="absolute right-0 top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-black/60 text-white w-10 h-10 rounded-full"
       >
         ›
       </button>
