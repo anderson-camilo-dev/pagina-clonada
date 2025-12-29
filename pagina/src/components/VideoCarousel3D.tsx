@@ -3,64 +3,128 @@
 import { useEffect, useState } from 'react'
 
 const videos = [
-  'https://youtube.com/shorts/8_hq4qZGTao?si=XOMh-Nh3DAHC1weY',
-  'https://youtube.com/shorts/5uHaWiWMO4g?si=0YWXIRoYQUuQroS6',
-  'https://youtube.com/shorts/5uHaWiWMO4g?si=QN00yCIrqwv9IEIx',
-  'https://youtube.com/shorts/ydonpXZmAMo?si=Pdy05S8RL1cWgtrd',
-  'https://youtube.com/shorts/3GWJmzqUSmI?si=3gNYtXIIEU9s-SYf',
-  'https://youtube.com/shorts/NkFdjFZPWBU?si=qhAeRRh99DtnMB4u',
-  'https://youtube.com/shorts/MOF1XjfD59k?si=bWvCregiNZlTY6hU',
-  'https://youtube.com/shorts/oBvrdz75xnI?si=BxeH6rxwpAKvd4Xx',
+  '8_hq4qZGTao',
+  '5uHaWiWMO4g',
+  'ydonpXZmAMo',
+  '3GWJmzqUSmI',
+  'NkFdjFZPWBU',
+  'MOF1XjfD59k',
+  'oBvrdz75xnI',
 ]
 
-export default function VideoCarousel3D() {
-  const [angle, setAngle] = useState(0)
+const VISIBLE = 3
+
+export default function VideoCarouselDepth() {
+  const [current, setCurrent] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setAngle((prev) => prev + 0.25) // velocidade do giro
-    }, 30)
+    if (isPaused) return
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % videos.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [isPaused])
 
-    return () => clearInterval(interval)
-  }, [])
+  function next() {
+    setCurrent(prev => (prev + 1) % videos.length)
+    setIsPaused(false)
+  }
 
-  const radius = 500
-  const step = 360 / videos.length
+  function prev() {
+    setCurrent(prev => (prev === 0 ? videos.length - 1 : prev - 1))
+    setIsPaused(false)
+  }
+
+  const visibleVideos = Array.from({ length: VISIBLE }).map((_, i) => {
+    return videos[(current + i) % videos.length]
+  })
+
+  function onClickVideo(index: number) {
+    if (index === 1) setIsPaused(true)
+  }
+
+  function getThumbnailUrl(id: string) {
+    return `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+  }
+
+  function getEmbedUrl(id: string) {
+    return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0`
+  }
 
   return (
-    <div className="relative w-full h-[450px] flex items-center justify-center overflow-hidden">
-      <div
-        className="relative w-[300px] h-[300px]"
-        style={{
-          transformStyle: 'preserve-3d',
-          transform: `rotateY(${angle}deg)`,
-        }}
+    <div className="relative w-full max-w-4xl mx-auto py-12">
+      <button
+        onClick={prev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/60 text-white w-10 h-10 rounded-full"
       >
-        {videos.map((video, index) => (
-          <div
-            key={index}
-            className="absolute w-[180px] mx-auto h-[320px]  shadow-2xl "
-            style={{
-              transform: `rotateY(${index * step}deg) translateZ(${radius}px)`,
-            }}
-          >
-            <iframe
-              src={toEmbed(video)}
-              className="w-full h-full"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
-          </div>
-        ))}
+        ‹
+      </button>
+
+      <div className="flex justify-center items-center gap-6">
+        {visibleVideos.map((id, i) => {
+          const isCenter = i === 1
+
+          return (
+            <div
+              key={i}
+              onClick={() => onClickVideo(i)}
+              className="transition-all duration-500 cursor-pointer"
+              style={{
+                transform: `
+                  scale(${getScale(i)})
+                  translateY(${getTranslateY(i)}px)
+                `,
+                opacity: getOpacity(i),
+                zIndex: isCenter ? 10 : 1,
+              }}
+            >
+              <div className="w-[220px] h-[390px] bg-black rounded-xl overflow-hidden shadow-2xl flex items-center justify-center">
+                {isCenter ? (
+                  <iframe
+                    src={getEmbedUrl(id)}
+                    className="w-full h-full"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                  />
+                ) : (
+                  <img
+                    src={getThumbnailUrl(id)}
+                    alt="Thumbnail do vídeo"
+                    className="w-full h-full object-cover"
+                  />
+                )}
+              </div>
+            </div>
+          )
+        })}
       </div>
+
+      <button
+        onClick={next}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/60 text-white w-10 h-10 rounded-full"
+      >
+        ›
+      </button>
     </div>
   )
 }
 
-function toEmbed(url: string) {
-  if (url.includes('/shorts/')) {
-    const id = url.split('/shorts/')[1].split('?')[0]
-    return `https://www.youtube.com/embed/${id}?mute=1&controls=0`
-  }
-  return url
+/* profundidade */
+function getScale(index: number) {
+  if (index === 1) return 1
+  if (index === 0 || index === 2) return 0.9
+  return 0.8
+}
+
+function getOpacity(index: number) {
+  if (index === 1) return 1
+  if (index === 0 || index === 2) return 0.7
+  return 0.5
+}
+
+function getTranslateY(index: number) {
+  if (index === 1) return 0
+  if (index === 0 || index === 2) return 15
+  return 20
 }
