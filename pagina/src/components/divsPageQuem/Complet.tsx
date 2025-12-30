@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { useState } from "react";
@@ -30,9 +28,9 @@ export default function Completo() {
   }
 
   return (
-    <div className="grid grid-cols-12 mb-30 gap-10 p-10">
+    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 p-4 md:p-10 mb-20">
       {/* COLUNA ESQUERDA */}
-      <div className="col-span-4 space-y-4">
+      <div className="col-span-1 md:col-span-4 space-y-4">
         {[
           ["Pragmático", "pragmatico"],
           ["Empreendedor", "empreendedor"],
@@ -43,11 +41,11 @@ export default function Completo() {
           <button
             key={value}
             onClick={() => setAtivo(value)}
-            className={`rounded-full py-5 w-full  transition-all
+            className={`w-full py-4 md:py-5 rounded-full font-semibold transition-all duration-300 focus:outline-none
               ${
                 ativo === value
-                  ? "bg-gray-500 text-white"
-                  : "bg-white text-black border border-gray-300 hover:bg-gray-700 hover:text-white"
+                  ? "bg-red-700 text-white"
+                  : "bg-white text-black border border-gray-300 hover:bg-red-600 hover:text-white"
               }`}
           >
             {label}
@@ -56,7 +54,7 @@ export default function Completo() {
       </div>
 
       {/* COLUNA DIREITA */}
-      <div className="col-span-8 flex items-center justify-center text-start">
+      <div className="col-span-1 md:col-span-8 flex items-start justify-center text-start transition-all duration-300">
         {renderConteudo()}
       </div>
     </div>

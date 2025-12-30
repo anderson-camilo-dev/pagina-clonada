@@ -18,7 +18,7 @@ export default function TooltipLinks({ word, links }) {
       onMouseLeave={() => setShow(false)}
     >
       {/* Palavra que ativa o tooltip */}
-      <span className="cursor-pointer hover:text-red-500 transition-colors">
+      <span className="cursor-pointer text-black/80 hover:text-red-500 transition-colors">
         {word}
       </span>
 

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Alfhabet } from "@/components/homepage/Alfhabet";
 import { Product } from "@/types/product";
 import { BarEnd } from "@/components/layout/BarEnd";
-import Footer from "@/components/layout/Footer";
 import ProductCard from "@/components/ProductCard";
 import Categories from "@/components/homepage/Categories";
 import SearchBar from "@/components/SearchBar";
@@ -13,7 +12,7 @@ export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [order, setOrder] = useState<"az" | "za" | "price-asc" | "price-desc">("az");
   const [searchTerm, setSearchTerm] = useState("");
-  const [loading, setLoading] = useState(true); // <-- estado de loading
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getProducts() {
@@ -25,7 +24,7 @@ export default function Home() {
       } catch (error) {
         console.error("Erro ao carregar produtos:", error);
       } finally {
-        setLoading(false); // <-- desliga o loading
+        setLoading(false);
       }
     }
 
@@ -52,39 +51,29 @@ export default function Home() {
   });
 
   return (
-    <main className="min-h-screen bg-white/98 py-2">
+    <main className="min-h-screen bg-white/98 py-4">
       <div className="max-w-7xl mx-auto">
+        {/* Barra inferior superior */}
         <div className="pt-2.5">
           <BarEnd />
         </div>
 
-        <div className="max-w-7xl grid grid-cols-10">
-          <div className="col-span-2 col-end-6 items-end">
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-          </div>
-          <div className="col-span-1 col-end-10">
-            <Alfhabet onChangeOrder={setOrder} />
-          </div>
-        </div>
-
+        {/* Layout principal */}
         {loading ? (
-          <div className="col-span-3 flex justify-center items-center mt-10 text-xl text-black/70">
+          <div className="flex justify-center items-center mt-10 text-xl text-black/70 w-full">
             Carregando produtos...
           </div>
         ) : (
-          <div className="grid grid-cols-4 gap-2">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mt-6">
+            {/* Lateral esquerda */}
+            <div className="md:col-span-1 space-y-4">
+              <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+              <Alfhabet onChangeOrder={setOrder} />
               <Categories />
             </div>
 
-            <div
-              className="col-span-3"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: "20px",
-              }}
-            >
+            {/* Produtos */}
+            <div className="md:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {orderedProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
@@ -92,8 +81,6 @@ export default function Home() {
           </div>
         )}
       </div>
-
-    
     </main>
   );
 }

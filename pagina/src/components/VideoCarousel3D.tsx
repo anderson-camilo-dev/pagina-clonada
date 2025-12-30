@@ -53,15 +53,15 @@ export default function VideoCarouselDepth() {
   }
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto py-12">
+    <div className="relative w-full max-w-4xl mx-auto py-12 px-2 sm:px-4">
       <button
         onClick={prev}
-        className="absolute left-0 top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-black/60 text-white w-10 h-10 rounded-full"
+        className="absolute left-0 top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-black/60 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full"
       >
         ‹
       </button>
 
-      <div className="flex justify-center items-center gap-6">
+      <div className="flex justify-center items-center gap-2 sm:gap-4 md:gap-6">
         {visibleVideos.map((id, i) => {
           const isCenter = i === 1
 
@@ -71,15 +71,12 @@ export default function VideoCarouselDepth() {
               onClick={() => onClickVideo(i)}
               className="transition-all duration-500 cursor-pointer"
               style={{
-                transform: `
-                  scale(${getScale(i)})
-                  translateY(${getTranslateY(i)}px)
-                `,
+                transform: `scale(${getScale(i)}) translateY(${getTranslateY(i)}px)`,
                 opacity: getOpacity(i),
                 zIndex: isCenter ? 10 : 1,
               }}
             >
-              <div className="w-[220px] h-[390px] bg-black rounded-xl overflow-hidden shadow-2xl flex items-center justify-center">
+              <div className="w-[150px] h-[270px] sm:w-[180px] sm:h-[310px] md:w-[220px] md:h-[390px] bg-black rounded-xl overflow-hidden shadow-2xl flex items-center justify-center">
                 {isCenter ? (
                   <iframe
                     src={getEmbedUrl(id)}
@@ -102,7 +99,7 @@ export default function VideoCarouselDepth() {
 
       <button
         onClick={next}
-        className="absolute right-0 top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-black/60 text-white w-10 h-10 rounded-full"
+        className="absolute right-0 top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-black/60 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full"
       >
         ›
       </button>

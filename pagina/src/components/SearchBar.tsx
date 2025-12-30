@@ -14,7 +14,7 @@ const SearchBar: FC<SearchBarProps> = ({ searchTerm, setSearchTerm }) => {
       placeholder="Buscar produtos..."
       value={searchTerm}
       onChange={(e) => setSearchTerm(e.target.value)}
-      className="w-150 p-2 border text-black/50 border-gray-300 rounded-full mb-4"
+      className="w-full md:w-[300px] p-3 border border-gray-300 rounded-full mb-4 placeholder-black/50 text-black focus:outline-none focus:ring-2 focus:ring-red-400 transition"
     />
   );
 };
