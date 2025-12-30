@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -15,10 +14,11 @@ const poppins = Poppins({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={poppins.variable}>
-      <body>
+      <body className="min-h-screen flex flex-col">
         <CartProvider>
           <Header />
-          <main>{children}</main>
+          {/* Faz o main crescer para empurrar o footer */}
+          <main className="flex-1">{children}</main>
           <Footer />
         </CartProvider>
       </body>

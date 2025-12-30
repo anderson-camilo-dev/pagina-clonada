@@ -7,25 +7,23 @@ export default function VideoYoutube() {
       "
     >
       <div className="   ">
-        <div className="h-100 w-full relative bg-blue-400">
-          <div
-            className=" border-b-2 border-blue-600 
-        grayscale
-        h-100
-        w-full
-        absolute 
-        opacity-50
-        bg-[url('https://blog.alegra.com/wp-content/uploads/2019/05/bump-collaboration-colleagues-1068523.jpg')]
-        bg-cover
-        bg-center
-        bg-no-repeat"
-          ></div>
+        <div className="h-100 w-full relative">
+          {/* Imagem de fundo */}
+          <div className="h-100 w-full absolute top-0 left-0 bg-[url('https://blog.alegra.com/wp-content/uploads/2019/05/bump-collaboration-colleagues-1068523.jpg')] bg-cover bg-center bg-no-repeat"></div>
+
+          {/* Camada azul semi-transparente */}
+          <div className="absolute inset-0 bg-blue-400 opacity-50"></div>
+
+          {/* Texto centralizado */}
+          <h1 className="absolute inset-0 flex items-center justify-center text-white text-6xl sm:text-8xl font-extrabold uppercase">
+            QUEM SOMOS
+          </h1>
         </div>
 
         <div className="pt-20  grid  grid-cols-2 max-w-7xl mx-auto gap-4  ">
           <div className=" h-100">
-            <iframe className="rounded-lg"
-            
+            <iframe
+              className="rounded-lg"
               width="560"
               height="315"
               src="https://www.youtube.com/embed/8rLxRzzxrH0?si=fUobs97-0JrLAZ9y"
@@ -60,7 +58,9 @@ export default function VideoYoutube() {
               <h1 className="text-black/70 max-w-7xl mx-auto text-center text-4xl font-extrabold">
                 Mais de 100
               </h1>{" "}
-              <p className="text-center max-w-7xl mx-auto text-black/70">Países</p>
+              <p className="text-center max-w-7xl mx-auto text-black/70">
+                Países
+              </p>
             </div>
             <div>
               <h1 className="text-6xl text-black/70 max-w-7xl mx-auto text-center font-extrabold">

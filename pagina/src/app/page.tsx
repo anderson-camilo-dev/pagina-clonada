@@ -5,7 +5,7 @@ import ShopPage from "@/components/ShopPage";
 
 
 export default function Shop() {
-  return (<main className="    bg-white">
+  return (<main className="    pb-100 bg-white">
     <div>
      <ImageCarousel/>
      </div>
