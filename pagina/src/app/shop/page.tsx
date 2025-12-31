@@ -56,7 +56,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto">
         {/* Barra inferior superior */}
         <div className="pt-2.5">
-          <BarEnd />
+          <h1 className="text-black text-5xl  font-extrabold text-center"> PRODUTOS</h1>
         </div>
 
         {/* Layout principal */}

@@ -4,7 +4,7 @@ export default function RollingText() {
   return (
     <div className="bg-black overflow-hidden py-3">
       <div className="whitespace-nowrap animate-scroll text-red-500 font-semibold">
-        {Array(2)
+        {Array(100)
           .fill(
             "🔥 DARK SALE • FRETE GRÁTIS • ATÉ 40% OFF • PAGAMENTO FLEXÍVEL 🔥"
           )
@@ -27,7 +27,7 @@ export default function RollingText() {
         .animate-scroll {
           display: inline-block;
           min-width: 200%;
-          animation: scroll 20s linear infinite;
+          animation: scroll 300s linear infinite;
         }
       `}</style>
     </div>

@@ -91,7 +91,7 @@ export function MainNav() {
 
             {/* Hamburger Mobile */}
             <button
-              className="md:hidden ml-2 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500"
+              className="md:hidden ml-2 p-2 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <svg

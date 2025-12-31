@@ -4,11 +4,11 @@ import HeroPromo from "@/components/promo/HeroPromo";
 import RollingText from "@/components/promo/RollingText";
 import ProductCarousel from "@/components/promo/ProductCarousel";
 import PrizeWheel from "@/components/promo/PrizeWheel";
-import PromoFooter from "@/components/promo/PromoFooter";
+
 
 export default function PromoPage() {
   return (
-    <main className="bg-[#0b0000] text-white min-h-screen">
+    <main className="bg-[#0b0000] pb-100 text-white min-h-screen">
       {/* Banner principal da promoção */}
       <HeroPromo />
 
@@ -20,9 +20,11 @@ export default function PromoPage() {
 
       {/* Roda da sorte / prêmio */}
       <PrizeWheel />
+      
+      <ProductCarousel />
 
-      {/* Footer específico da página de promoção */}
-      <PromoFooter />
+
+
     </main>
   );
 }

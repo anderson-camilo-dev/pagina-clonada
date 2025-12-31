@@ -1,7 +1,7 @@
 export default function Pragmatico() {
   return (
     <div className="max-w-3xl mb-20">
-      <h1 className="text-start text-2xl md:text-3xl font-extrabold text-black pt-20 md:pt-24 pb-10">
+      <h1 className="text-start text-2xl md:text-3xl font-extrabold text-black pt-20 md:pt-24 ">
         Dedicado a resolver problemas do usuário
       </h1>
 

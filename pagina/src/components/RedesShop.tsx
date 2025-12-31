@@ -10,7 +10,7 @@ export default function RedeShop() {
       </div>
 
       {/* Primeira linha */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-5">
+      <div className="grid grid-cols-1 md:grid-cols-2  pt-5">
         <div className="w-full h-auto">
           <iframe
             className="w-full h-[200px] sm:h-[315px]"
@@ -19,10 +19,10 @@ export default function RedeShop() {
           ></iframe>
         </div>
         <div className="flex flex-col justify-center">
-          <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl text-black/80">
+          <h1 className="font-semibold text-2xl sm:text-3xl pl-6 md:text-4xl text-black/80">
             Bigme na IFA 2024
           </h1>
-          <p className="text-black/80 font-semibold pt-4 text-base sm:text-lg md:text-xl">
+          <p className="text-black/80 font-semibold pt-4 pl-6 text-base sm:text-lg md:text-xl">
             Bigme fez uma grande aparição na IFA 2024 em Berlim, Alemanha,
             apresentando uma variedade de produtos inovadores que cativaram
             tanto os usuários quanto a mídia. Isto aumentou significativamente o
@@ -32,12 +32,12 @@ export default function RedeShop() {
       </div>
 
       {/* Segunda linha */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 ">
         <div className="flex flex-col justify-center text-center md:text-end">
-          <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl text-black/80">
+          <h1 className="font-semibold text-2xl pr-6 sm:text-3xl md:text-4xl text-black/80">
             Bigme na IFA 2024
           </h1>
-          <p className="text-black/80 font-semibold pt-4 text-base sm:text-lg md:text-xl">
+          <p className="text-black/80 font-semibold pr-6 pt-4 text-base sm:text-lg md:text-xl">
             Bigme fez uma grande aparição na IFA 2024 em Berlim, Alemanha,
             apresentando uma variedade de produtos inovadores que cativaram
             tanto os usuários quanto a mídia. Isto aumentou significativamente o

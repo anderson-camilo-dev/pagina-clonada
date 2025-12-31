@@ -28,7 +28,7 @@ export default function Completo() {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 p-4 md:p-10 mb-20">
+    <div className="grid grid-cols-1  md:grid-cols-12 gap-6 md:gap-10 p-4 md:p-10 mb-10">
       {/* COLUNA ESQUERDA */}
       <div className="col-span-1 md:col-span-4 space-y-4">
         {[
@@ -54,7 +54,7 @@ export default function Completo() {
       </div>
 
       {/* COLUNA DIREITA */}
-      <div className="col-span-1 md:col-span-8 flex items-start justify-center text-start transition-all duration-300">
+      <div className="col-span-1 md:col-span-8 flex items-start justify-center h-120 text-start transition-all duration-300">
         {renderConteudo()}
       </div>
     </div>

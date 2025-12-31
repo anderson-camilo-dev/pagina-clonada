@@ -73,7 +73,7 @@ export default function VideoYoutube() {
 
       {/* Seção de texto sobre inovação */}
       <div className="container mx-auto px-6 py-20 text-center md:text-left">
-        <h1 className="text-4xl font-bold mb-4">
+        <h1 className="text-4xl text-black/80 font-bold mb-4">
           Comprometido com produtos inovadores de tela E-ink
         </h1>
         <p className="text-black/70 text-lg md:text-xl leading-relaxed">
