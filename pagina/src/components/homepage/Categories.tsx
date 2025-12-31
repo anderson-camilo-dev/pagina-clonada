@@ -23,8 +23,8 @@ export default function Categories() {
   ];
 
   return (
-    <div>
-      <h1 className="text-black/80 font-bold text-xl mb-2">Categoria de produtos</h1>
+    <div className="pl-5">
+      <h1 className="text-black/80 font-bold  text-xl mb-2">Categoria de produtos</h1>
       <div className="h-52 overflow-y-auto font-mono scroll-smooth p-2">
         {categories.map((cat, index) => (
           <p
